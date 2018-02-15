@@ -1,5 +1,8 @@
 var Letter = require("./letter.js"); 
 
+var gameDictionary = ['rickroll','nyancat','orly','feelsbadman','joebiden',
+     'ricksanchez','trump']
+
 var Word = function (currWord) {
     this.letters = currWord.split("").map(letter => new Letter(letter));
 
@@ -16,7 +19,10 @@ var Word = function (currWord) {
         }
     }
     this.checkLetter = function(character) {
-        //create a var guessTrue (bool) this tells us if a letter in our word changed (default to false, assume they didnt guess a letter)
+        //create a var guessTrue (bool) this tells us if a letter in our word changed 
+        //(default to false, assume they didnt guess a letter)
+        var guessTrue = false; 
+
         //check to see if letter is in word with FOR loop (just like line 12) every letter in array
         //then IF the character matches the letter guessed. IF character matches, we are also going to set Bool value to true
             //go into letter object and change letter to true.
