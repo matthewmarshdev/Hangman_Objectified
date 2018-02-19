@@ -4,6 +4,7 @@
   "description": "Hangman game, objectified",
   "main": "index.js",
   "dependencies": {
+    "figlet": "^1.2.0",
     "inquirer": "^5.1.0"
   },
   "devDependencies": {},

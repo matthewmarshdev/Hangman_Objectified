@@ -1,7 +1,28 @@
 
 const inquirer = require("inquirer");
 const Word = require("./word.js"); 
+var figlet = require("figlet");
 
+figlet("Hangman Game", function(err, data) {
+  if (err) {
+    console.log("Something went wrong...");
+    console.dir(err);
+    return;
+  }
+  console.log(data);
+});
+
+var currWord = [
+  "rickroll",
+  "nyancat",
+  "orly",
+  "feelsbadman",
+  "joebiden",
+  "ricksanchez",
+  "trump"
+];
+
+var rand = currWord[Math.floor(Math.random() * currWord.length)];
 
 const Game = function(){
         
@@ -15,7 +36,7 @@ const Game = function(){
         //select a word randomly from array (uptop)
         this.currentWord = new Word();
         this.currentword.renderWord();
-        console.log("in pickWord")
+        console.log("in pickWord"); 
         this.makeGuess();   
     }
     this.makeGuess = function (){
@@ -40,22 +61,11 @@ const Game = function(){
             letter.push(wrongGuess);
             console.log(letter + "is definitely not in the word!")
         }
-        //IF guessed letter of character is true, call the guessTrue, then use else for false statement. 
     }
-
-   
-
 }
 
 
 let newGame = new Game();
 console.log(newGame);
-//newGame.promptGuess();
-//newGame.currentWord.logLetter();
-startGame(newGame);
+Game();
 
-//start a game (create game {}) new Game = Game()
-    //this.play() might be a separate function
-//will pick a work from a list 
-//word will call Letter, it will generate objects (along with True and False)
-//render the word in the terminal 
