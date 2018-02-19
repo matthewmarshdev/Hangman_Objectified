@@ -7,7 +7,6 @@ const Game = function(){
         
     this.wrongGuess = [];
     this.rightGuess = [];
-    var self = this;
     this.startGame = function (){
         this.guesses = 8;
         this.pickWord();
@@ -32,7 +31,7 @@ const Game = function(){
             });
         }
         //calls a function that checks to see if letter is in current word
-        Word.checkLetter();
+        Word.handleGuess();
         //IF correct, send to rightGuess, IF wrong send to wrongGuess
         if(guessTrue = true){
             letter.push(rightGuess);
@@ -51,8 +50,9 @@ const Game = function(){
 
 let newGame = new Game();
 console.log(newGame);
-newGame.promptGuess();
-newGame.currentWord.logLetter();
+//newGame.promptGuess();
+//newGame.currentWord.logLetter();
+startGame(newGame);
 
 //start a game (create game {}) new Game = Game()
     //this.play() might be a separate function

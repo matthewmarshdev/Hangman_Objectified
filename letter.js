@@ -1,6 +1,6 @@
-const guess = process.argv[2]
 
-//I need to write an if statment that takes in the argv. if its 1 character, pass it to Letter. 
+
+
 
 var Letter = function (letter) {
     this.isTrue = false;
